@@ -64,7 +64,7 @@ public class Parent {
     }
     public void randomSelectProduct2() {
 
-        List<WebElement> listP = GWD.getDriver().findElements(By.xpath("//div[@class='a-section a-spacing-none a-spacing-top-small s-title-instructions-style']"));
+        List<WebElement> listP = GWD.getDriver().findElements(By.xpath("//div[@class='a-section a-spacing-base']"));
         listP.get(getRandomNumberInBetween(0, listP.size() - 1)).click();
 
        }
