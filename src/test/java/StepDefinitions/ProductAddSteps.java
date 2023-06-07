@@ -16,7 +16,7 @@ public class ProductAddSteps {
 
     @When("Select Department Find Product Add")
     public void selectDepartmentFindProductAdd() {
-        at.rndmSelectProduct("randomSelect");
+        at.rndmSelectProduct("randomAllCategories");
         at.findAndClick("searchButton");
         at.productListSelectRandom("productListSelect");
     }

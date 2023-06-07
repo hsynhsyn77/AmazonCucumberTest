@@ -14,7 +14,9 @@ import java.util.List;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
+import static Utilities.GWD.generateRandomNumber;
 import static Utilities.GWD.getRandomNumberInBetween;
+import static java.util.Collections.list;
 
 public class Parent {
     public void sendKeysFunction(WebElement element, String value) {
@@ -57,17 +59,31 @@ public class Parent {
 
     public void randomSelectProduct() {
 
-        List<WebElement> list = GWD.getDriver().findElements(By.xpath(".//*[@id='searchDropdownBox']//option"));
-        list.get(getRandomNumberInBetween(0, list.size() - 1)).click();
+        List<WebElement> productElems = GWD.getDriver().findElements(By.xpath("//*[@id='searchDropdownBox']//option"));
+        int maxProducts = productElems.size();
+        Random random = new Random();
+        int randomProduct1 = random.nextInt(maxProducts);
+        productElems.get(randomProduct1).click();
+        System.out.println("randomProduct1 = " + randomProduct1);
+
 
 
     }
+
     public void randomSelectProduct2() {
 
         List<WebElement> listP = GWD.getDriver().findElements(By.xpath("//div[@class='a-section a-spacing-base']"));
-        listP.get(getRandomNumberInBetween(0, listP.size() - 1)).click();
+        int maxPrdts=listP.size();
+        Random random = new Random();
+        int randomProduct2 = random.nextInt(maxPrdts);
+        listP.get(randomProduct2).click();
+        System.out.println("randomProduct2 = " + randomProduct2);
 
-       }
+
+
+
+
+    }
 
 }
 

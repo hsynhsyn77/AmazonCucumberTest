@@ -18,12 +18,12 @@ public class LeftListNav extends Parent {
     public WebElement navleft;
 
     @FindBy(xpath = "//*[@id='searchDropdownBox']//option")
-    public WebElement randomSelect;
+    public WebElement randomAllCategories;
 
     @FindBy(id = "nav-search-submit-button")
     public WebElement searchButton;
 
-    @FindBy(xpath = "//span[contains(text(),'Deliver to Hüseyin')]")
+    @FindBy(xpath = "//span[contains(text(),'Alıcı: HÜSEYİN')]")
     public WebElement assertText;
 
     @FindBy(xpath = "//span[text()=' Güvenli işlem ']")
@@ -52,7 +52,7 @@ public class LeftListNav extends Parent {
 
         switch (strElement) {
 
-            case "randomSelect": myElement = randomSelect;break;
+            case "randomAllCategories": myElement = randomAllCategories;break;
 
         }
 

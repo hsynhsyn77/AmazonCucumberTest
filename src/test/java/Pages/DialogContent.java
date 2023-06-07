@@ -27,7 +27,7 @@ public class DialogContent extends Parent {
     @FindBy(id = "signInSubmit")
     public WebElement signInbutton;
 
-    @FindBy(xpath = "//span[contains(text(),'Hüseyin')]")
+    @FindBy(xpath = "//span[contains(text(),'Alıcı: HÜSEYİN')]")
     public WebElement assertText;
 
     WebElement myElement;

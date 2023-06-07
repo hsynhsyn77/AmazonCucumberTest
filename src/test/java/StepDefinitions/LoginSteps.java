@@ -32,7 +32,7 @@ public class LoginSteps {
 
     @Then("User should login successfuly")
     public void userShouldLoginSuccessfuly() {
-        dc.findAndContainText("assertText", "Hüseyin");
+        dc.findAndContainText("assertText", "Alıcı: HÜSEYİN");
 
 
     }
