@@ -88,6 +88,8 @@ public class LeftListNav extends Parent {
 
         randomSelectProduct2();
 
+
+
     }
 
 }

@@ -47,5 +47,12 @@ public class GWD {
         int rNum=random.nextInt(number);
         return rNum;
     }
+    public static void Bekle(int saniye) {
+        try {
+            Thread.sleep(saniye * 1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
 }

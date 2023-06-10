@@ -30,6 +30,11 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//span[contains(text(),'Alıcı: HÜSEYİN')]")
     public WebElement assertText;
 
+    @FindBy(xpath = "//*[@id='searchDropdownBox']//option")
+    public WebElement productElems;
+
+
+
     WebElement myElement;
 
     public void findAndSend(String strElement, String value) {

@@ -63,24 +63,24 @@ public class Parent {
         int maxProducts = productElems.size();
         Random random = new Random();
         int randomProduct1 = random.nextInt(maxProducts);
+        String value = productElems.get(randomProduct1).getText();
+        System.out.println(value);
         productElems.get(randomProduct1).click();
-        System.out.println("randomProduct1 = " + randomProduct1);
-
+        System.out.println(randomProduct1);
 
 
     }
 
     public void randomSelectProduct2() {
 
-        List<WebElement> listP = GWD.getDriver().findElements(By.xpath("//div[@class='a-section a-spacing-base']"));
-        int maxPrdts=listP.size();
+        List<WebElement> listP = GWD.getDriver().findElements(By.xpath("//*[@class='a-section a-spacing-base'] "));
+        int maxPrdts = listP.size();
         Random random = new Random();
         int randomProduct2 = random.nextInt(maxPrdts);
+        System.out.println(randomProduct2);
+        String value = listP.get(randomProduct2).getText();
+        System.out.println(value);
         listP.get(randomProduct2).click();
-        System.out.println("randomProduct2 = " + randomProduct2);
-
-
-
 
 
     }

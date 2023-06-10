@@ -1,5 +1,6 @@
 package StepDefinitions;
 
+import Pages.DialogContent;
 import Pages.LeftListNav;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -8,6 +9,7 @@ import org.openqa.selenium.WebElement;
 
 public class ProductAddSteps {
     LeftListNav at=new LeftListNav();
+
     @And("Navigate Departments")
     public void navigateDepartments() {
         at.findAndClick("navleft");
@@ -25,5 +27,6 @@ public class ProductAddSteps {
     public void successMessageShouldBeDisplayed() {
 
         at.findAndContainText2("assertTextProduct","Güvenli işlem");
+
     }
 }
