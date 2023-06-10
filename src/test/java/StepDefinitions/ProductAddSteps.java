@@ -8,7 +8,7 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.WebElement;
 
 public class ProductAddSteps {
-    LeftListNav at=new LeftListNav();
+    LeftListNav at = new LeftListNav();
 
     @And("Navigate Departments")
     public void navigateDepartments() {
@@ -25,8 +25,12 @@ public class ProductAddSteps {
 
     @Then("Success message should be displayed")
     public void successMessageShouldBeDisplayed() {
+        at.findAndContainText2("assertText2", "Sepete Eklendi");
 
-        at.findAndContainText2("assertTextProduct","Güvenli işlem");
+    }
 
+    @Then("Add product to cart")
+    public void addProductToCart() {
+        at.findAndClick("sepeteEkle");
     }
 }

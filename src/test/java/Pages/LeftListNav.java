@@ -32,6 +32,13 @@ public class LeftListNav extends Parent {
     @FindBy(xpath = "//div[@class='a-section a-spacing-none a-spacing-top-small s-title-instructions-style']")
     public WebElement productListSelect;
 
+    @FindBy(xpath = "//input[@id='add-to-cart-button']")
+    public WebElement sepeteEkle;
+
+
+    @FindBy(xpath = "//span[contains(text(),' Sepete Eklendi')]")
+    public WebElement assertText2;
+
 
     WebElement myElement;
 
@@ -41,6 +48,7 @@ public class LeftListNav extends Parent {
 
             case "navleft": myElement = navleft;break;
             case "searchButton": myElement = searchButton;break;
+            case "sepeteEkle":myElement=sepeteEkle;break;
 
         }
 
@@ -72,7 +80,10 @@ public class LeftListNav extends Parent {
     public void findAndContainText2(String strElement, String text) {
 
         switch (strElement) {
-            case "assertTextProduct": myElement = assertTextProduct;break;
+            case "assertText2":myElement=assertText2;break;
+
+
+
         }
         verifyContainsText(myElement, text);
 
@@ -83,6 +94,7 @@ public class LeftListNav extends Parent {
         switch (strElement) {
 
             case "productListSelect": myElement = productListSelect;break;
+
 
         }
 

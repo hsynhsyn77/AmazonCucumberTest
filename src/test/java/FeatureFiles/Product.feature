@@ -8,7 +8,11 @@ Feature: Add Product To Cart
   Scenario: Add Product
     And Navigate Departments
     When Select Department Find Product Add
+    And Add product to cart
     Then Success message should be displayed
+
+
+
 
 
 

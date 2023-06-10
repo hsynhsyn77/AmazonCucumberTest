@@ -30,8 +30,8 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//span[contains(text(),'Alıcı: HÜSEYİN')]")
     public WebElement assertText;
 
-    @FindBy(xpath = "//*[@id='searchDropdownBox']//option")
-    public WebElement productElems;
+
+
 
 
 
@@ -53,6 +53,7 @@ public class DialogContent extends Parent {
             case "signbutton": myElement = signbutton;break;
             case "continuebutton": myElement = continuebutton;break;
             case "signInbutton": myElement = signInbutton;break;
+
         }
         clickFunction(myElement);
 
@@ -62,6 +63,7 @@ public class DialogContent extends Parent {
 
         switch (strElement) {
             case "assertText": myElement = assertText;break;
+
         }
         verifyContainsText(myElement, text);
 
