@@ -40,6 +40,7 @@ public class LeftListNav extends Parent {
     public WebElement assertText2;
 
 
+
     WebElement myElement;
 
     public void findAndClick(String strElement) {
@@ -68,27 +69,20 @@ public class LeftListNav extends Parent {
 
     }
 
-    public void findAndContainText(String strElement, String text) {
-
-        switch (strElement) {
-            case "assertText": myElement = assertText;break;
-        }
-        verifyContainsText(myElement, text);
-
-
-    }
-    public void findAndContainText2(String strElement, String text) {
-
-        switch (strElement) {
-            case "assertText2":myElement=assertText2;break;
+    //public void findAndContainText(String strElement, String text) {
+//
+    //    switch (strElement) {
+//
+//
+    //    }
+    //    verifyContainsText(myElement, text);
+//
+//
+    //}
 
 
 
-        }
-        verifyContainsText(myElement, text);
 
-
-    }
 
     public void productListSelectRandom(String strElement) {
         switch (strElement) {

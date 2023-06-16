@@ -1,21 +1,19 @@
 package Pages;
 
 import Utilities.GWD;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
+import io.cucumber.datatable.DataTable;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.time.Duration;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.concurrent.locks.Condition;
 
-import static Utilities.GWD.generateRandomNumber;
-import static Utilities.GWD.getRandomNumberInBetween;
+import static Utilities.GWD.*;
 import static java.util.Collections.list;
 
 public class Parent {
@@ -29,25 +27,26 @@ public class Parent {
     }
 
     public void waitUntilVisible(WebElement element) {
+
         WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(30));
         wait.until(ExpectedConditions.visibilityOf(element));
+
+
     }
 
     public void scrollToElement(WebElement element) {
         //JavascriptExecutor js = (JavascriptExecutor) GWD.getDriver();
         //js.executeScript("arguments[0].scrollIntView();", element);
+
+
         element.click();
 
     }
 
-    public void clickFunction(WebElement element) {
-        waitUntilClickable(element);//tıklanabliri olana kadar bekleme
-        waitUntilVisible(element);//elementte scroll yap
-        scrollToElement(element);//click yap
-    }
+
 
     public void waitUntilClickable(WebElement element) {
-        WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(30));
+        WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(2));
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
@@ -82,9 +81,39 @@ public class Parent {
         System.out.println(value);
         listP.get(randomProduct2).click();
 
-
     }
 
+    public void deleteProduct() {
+        List<WebElement> deleteProducts = GWD.getDriver().findElements(By.xpath("//input[@value='Sil']"));
+
+        for (WebElement e : deleteProducts) {
+            boolean isClicked = false;
+            int retryCount = 0;
+            while (!isClicked && retryCount < 3) {
+                try {
+                    e.click();
+                    isClicked = true;
+                } catch (StaleElementReferenceException exception) {
+                    retryCount++;
+                    GWD.getDriver().navigate().refresh();
+                    e = GWD.getDriver().findElement(By.xpath("//input[@value='Sil']"));
+                }
+            }
+        }
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

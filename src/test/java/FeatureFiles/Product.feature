@@ -9,6 +9,7 @@ Feature: Add Product To Cart
     And Navigate Departments
     When Select Department Find Product Add
     And Add product to cart
+    When Go to cart and delete product
     Then Success message should be displayed
 
 
